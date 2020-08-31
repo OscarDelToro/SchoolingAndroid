@@ -5,13 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class favscoop extends AppCompatActivity {
     View decorView;
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_favscoop);
         decorView=getWindow().getDecorView();
         decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                 | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -20,9 +20,15 @@ public class MainActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_IMMERSIVE);
     }
+    public void launchDashboard(View view){
+        Intent n= new Intent(this, Dashboard.class);
+        startActivity(n);
 
-    public void runLogin(View v){
-        Intent log = new Intent(this, Login.class);
-        startActivity(log);
     }
+    public void goback(View v){
+        super.onBackPressed();
+    }
+
+
+
 }
